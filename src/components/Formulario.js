@@ -1,6 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const Formulario = () => {
+
+    // State del Formulario
+    const [busqueda, guardarBusqueda] = useState({
+        ciudad: '',
+        pais: ''
+    });
+
+    // Extraigo los datos
+    const {ciudad, pais} = busqueda;
+
+    // Pasas los datos el State
+    const muestroDatos = e => {
+        guardarBusqueda({
+            ...busqueda,
+            [e.target.name] : e.target.value
+        })
+    }
+
     return ( 
         <form>
             <div className="input-field col s12">
@@ -8,6 +26,8 @@ const Formulario = () => {
                     type="text"
                     name="ciudad"
                     id="ciudad"
+                    value={ciudad}
+                    onChange={muestroDatos}
                 />
                 <label htmlFor="ciudad">Ciudad: </label>
             </div>
@@ -16,6 +36,8 @@ const Formulario = () => {
                 <select
                     name="pais"
                     id="pais"
+                    value={pais}
+                    onChange={muestroDatos}
                 >
                     <option value="">-- Seleccionar --</option>
                     <option value="AR">Argentina</option>
