@@ -8,6 +8,9 @@ const Formulario = () => {
         pais: ''
     });
 
+    // State de Error
+    const [error, guardarError] = useState(false)
+
     // Extraigo los datos
     const {ciudad, pais} = busqueda;
 
@@ -19,8 +22,34 @@ const Formulario = () => {
         })
     }
 
+    // Cuando el usuario haga click en submit
+    const handleSubmit = e => {
+        e.preventDefault();
+
+
+        // Validar
+        if (ciudad.trim() === '' || pais.trim() === '')
+        {
+            guardarError(true);
+            return;
+        }
+
+        guardarError(false);
+
+        // Pasar los datos al componente principal
+    }
+
+
+
+
+
     return ( 
-        <form>
+        <form
+            onSubmit={handleSubmit}
+        >
+
+            {error ? <p className="red lighten-1 error">Complete todos los campos</p> : null}
+
             <div className="input-field col s12">
                 <input 
                     type="text"
@@ -49,6 +78,15 @@ const Formulario = () => {
 
                 <label htmlFor="pais">Pais: </label>
             </div>
+
+            <div className="input-field col s12">
+                <button
+                    type="submit"
+                    value="Buscar Clima"
+                    className="waves-effect waves-light btn-large btn-block orange lighten-2 col s12"
+                >Buscar Clima</button>
+            </div>
+
         </form>
      );
 }
