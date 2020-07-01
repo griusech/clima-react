@@ -13,7 +13,7 @@ const Formulario = ({busqueda, guardarBusqueda, guardarConsultar}) => {
         guardarBusqueda({
             ...busqueda,
             [e.target.name] : e.target.value
-        })
+        });
     }
 
     // Cuando el usuario haga click en submit
