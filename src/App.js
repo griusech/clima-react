@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import Header from './components/Header'
 import Formulario from './components/Formulario'
 
@@ -10,6 +10,18 @@ function App() {
         ciudad: '',
         pais: ''
     });
+
+    const [consultar, guardarConsultar] = useState(false)
+
+    // Extraigo los datos
+    const {ciudad, pais} = busqueda;
+
+    useEffect(() => {
+      const consultarAPI = async () => {
+
+      }
+      consultarAPI();
+    }, [consultar])
 
   return (
     <Fragment>
@@ -24,6 +36,8 @@ function App() {
               <Formulario 
                 busqueda = {busqueda}
                 guaradrBusqueda = {guardarBusqueda}
+                guardarConsultar = {guardarConsultar}
+                
               />
             </div>
             <div className="col m6 s12">
