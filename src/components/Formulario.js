@@ -15,9 +15,17 @@ const Formulario = () => {
             <div className="input-field col s12">
                 <select
                     name="pais"
+                    id="pais"
                 >
                     <option value="">-- Seleccionar --</option>
+                    <option value="AR">Argentina</option>
+                    <option value="US">Estados Unidos</option>
+                    <option value="ES">España</option>
+                    <option value="CO">Colombia</option>
+
                 </select>
+
+                <label htmlFor="pais">Pais: </label>
             </div>
         </form>
      );
