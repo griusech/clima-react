@@ -29,6 +29,7 @@ function App() {
           const resultado = await respuesta.json();
 
           guardarResultado(resultado)
+          guardarConsultar(false)
         }
 
       }

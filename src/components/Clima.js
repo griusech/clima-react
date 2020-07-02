@@ -14,13 +14,13 @@ const Clima = ({resultado}) => {
             <div className="black-text">
                 <h2>El clima de {name} es:</h2>
                 <p className="temperatura">
-                    {parseInt(main.temp - kelvin)} <span>&#x2103;</span>
+                    {parseFloat(main.temp - kelvin).toFixed(2)} <span>&#x2103;</span>
                 </p>
                 <p>Temperatura Maxima: 
-                    {parseInt(main.temp_max - kelvin)} <span>&#x2103;</span>
+                    {parseFloat(main.temp_max - kelvin).toFixed(2)} <span>&#x2103;</span>
                 </p>
                 <p>Temperatura Minima: 
-                    {parseInt(main.temp_min - kelvin)} <span>&#x2103;</span>
+                    {parseFloat(main.temp_min - kelvin).toFixed(2)} <span>&#x2103;</span>
                 </p>
             </div>
         </div>
