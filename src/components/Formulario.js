@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Error from './Error';
 
 const Formulario = ({busqueda, guardarBusqueda, guardarConsultar}) => {
 
@@ -41,7 +42,7 @@ const Formulario = ({busqueda, guardarBusqueda, guardarConsultar}) => {
             onSubmit={handleSubmit}
         >
 
-            {error ? <p className="red lighten-1 error">Complete todos los campos</p> : null}
+            {error ? <Error mensaje="Complete todos los campos" /> : null}
 
             <div className="input-field col s12">
                 <input 
